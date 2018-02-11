@@ -20,6 +20,13 @@ h3
     margin:auto;
 }
 
+.comment
+{
+    width:60%;
+    margin:auto;
+    color: firebrick;
+}
+
 a
 {
     text-decoration: none;
