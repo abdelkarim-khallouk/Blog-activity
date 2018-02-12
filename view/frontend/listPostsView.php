@@ -1,9 +1,16 @@
-<?php $title = 'Mon blog'; ?>
+<?php
+/**
+ * Created by PhpStorm.
+ * User: master
+ * Date: 2/12/18
+ * Time: 11:22 AM
+ */
+
+$title = 'Mon blog'; ?>
 
 <?php ob_start(); ?>
-
-<h1>Mon super blog !</h1>
-<p class="news">Derniers billets du blog :</p>
+    <h1>Mon super blog !</h1>
+    <p class="news">Derniers billets du blog :</p>
 
 
 <?php
@@ -19,14 +26,13 @@ while ($data = $posts->fetch())
         <p>
             <?= nl2br(htmlspecialchars($data['content'])) ?>
             <br />
-            <em><a href="post.php?id=<?= $data['id'] ?>">Commentaires..</a></em>
+            <em><a href='./index.php?action=post&amp;id=<?= $data['id'] ?>'>Commentaires</a></em>
         </p>
     </div>
     <?php
 }
 $posts->closeCursor();
 ?>
-
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>

@@ -1,6 +1,12 @@
 <?php
 
-require('controller.php');
+
+//$p = $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']);
+//echo $p;
+//echo __DIR__;
+
+require(__DIR__ .'/controller/frontend.php');
+
 
 if (isset($_GET['action'])) {
     if ($_GET['action'] == 'listPosts') {

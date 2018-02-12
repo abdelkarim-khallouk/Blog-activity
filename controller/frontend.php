@@ -6,13 +6,13 @@
  */
 
 
-require('model.php');
+require(__DIR__ .'/../model/frontend.php');
 
 function listPosts()
 {
     $posts = getPosts();
 
-    require('listPostsView.php');
+    require(__DIR__ .'/../view/frontend/listPostsView.php');
 }
 
 function post()
@@ -20,5 +20,5 @@ function post()
     $post = getPost($_GET['id']);
     $comments = getComments($_GET['id']);
 
-    require('postView.php');
+    require(__DIR__ .'/../view/frontend/postView.php');
 }
