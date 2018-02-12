@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 
 <h1>Mon super blog !</h1>
-<p>Derniers billets du blog :</p>
+<p class="news">Derniers billets du blog :</p>
 
 
 <?php
@@ -19,7 +19,7 @@ while ($data = $posts->fetch())
         <p>
             <?= nl2br(htmlspecialchars($data['content'])) ?>
             <br />
-            <em><a href="post.php?id=<?= $data['id'] ?>">Commentaires</a></em>
+            <em><a href="post.php?id=<?= $data['id'] ?>">Commentaires..</a></em>
         </p>
     </div>
     <?php
