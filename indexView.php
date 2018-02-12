@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Mon blog</title>
-    <link href="style.css" rel="stylesheet" />
-</head>
+<?php $title = 'Mon blog'; ?>
 
-<body>
+<?php ob_start(); ?>
+
 <h1>Mon super blog !</h1>
 <p>Derniers billets du blog :</p>
 
@@ -31,5 +26,7 @@ while ($data = $posts->fetch())
 }
 $posts->closeCursor();
 ?>
-</body>
-</html>
+
+<?php $content = ob_get_clean(); ?>
+
+<?php require('template.php'); ?>
