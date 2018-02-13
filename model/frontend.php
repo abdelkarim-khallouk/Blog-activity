@@ -37,6 +37,12 @@ function getComments($postId)
     return $comments;
 }
 
+function insertComment($author, $comment, $post_id)
+{
+    $db = dbConnect();
+    $req = $db->prepare('INSERT INTO comments (author, comment, post_id, comment_date) VALUES (?, ?, ?, CURRENT_TIMESTAMP())');
+    $req->execute(array($author, $comment, $post_id));
+}
 
 function dbConnect()
 {
