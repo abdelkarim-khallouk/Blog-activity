@@ -29,13 +29,26 @@ try {
                 throw  new Exception("Aucun identifiant de billet envoyé");
             }
         }
+        elseif ($_GET['action'] == 'modifyComment') {
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                if(!empty($_POST['comment']) && !empty($_GET['post_id'])) {
+                    modifyComment($_GET['id'], $_POST['comment'], $_GET['post_id']);
+                }
+                else {
+                    throw new Exception("Un ou plusieur champs ne sont pas remplis !");
+                }
+            }
+            else {
+                throw  new Exception("Aucun identifiant de billet envoyé");
+            }
+        }
     }
     else {
         listPosts();
     }
 }
 catch (Exception $ex) {
-    $errorMessage = $e->getMessage();
-    require('view/errorView.php');
+    $errorMessage = $ex->getMessage();
+    require(__DIR__ .'/view/frontend/errorView.php');
 }
 

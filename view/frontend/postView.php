@@ -27,8 +27,12 @@
         while ($comment = $comments->fetch())
         {
             ?>
-            <p class="news"><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
-            <p class="news"><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+            <p class="news">
+                <strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?> (<a href="./form/postForm.php?author=<?= $comment['author'] ?> &amp;comment=<?= $comment['comment'] ?>&amp;id=<?= $comment['id'] ?>&amp;post_id=<?= $post['id'] ?>">modifier</a>)
+            </p>
+            <p class="news">
+                <?= nl2br(htmlspecialchars($comment['comment'])) ?>
+            </p>
             <br />
             <?php
         }
@@ -45,11 +49,9 @@
                     <textarea id="comment" name="comment" placeholder="Commentaire"></textarea>
                 </div>
                 <div>
-                    <input type="submit" value="Publier"/>
+                    <input type="submit" value="Ajouter"/>
                 </div>
-
             </div>
-
         </form>
     </body>
 </html>

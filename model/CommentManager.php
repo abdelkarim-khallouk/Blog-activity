@@ -28,4 +28,14 @@ class CommentManager extends Manager
 
         return $affectedLines;
     }
+
+    public function updateComment($id, $comment)
+    {
+        $dbManger = new Manager();
+        $db = $dbManger->dbConnect();
+        $comments = $db->prepare('UPDATE comments SET comment = ? WHERE id = ?');
+        $affectedLines = $comments->execute(array($comment, $id));
+
+        return $affectedLines;
+    }
 }
