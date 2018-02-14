@@ -4,6 +4,10 @@
  * Date: 2/12/18
  * Time: 11:06 AM
  */
+
+use \Master\Blog\Model\PostManager;
+use \Master\Blog\Model\CommentManager;
+
 require_once(__DIR__ ."/../model/PostManager.php");
 require_once(__DIR__ ."/../model/CommentManager.php");
 

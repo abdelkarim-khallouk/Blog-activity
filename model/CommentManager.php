@@ -5,6 +5,10 @@
  * Date: 2/14/18
  * Time: 10:23 AM
  */
+
+namespace Master\Blog\Model;
+use \Master\Blog\Model;
+
 require_once("model/Manager.php");
 
 class CommentManager extends Manager
