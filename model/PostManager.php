@@ -5,6 +5,7 @@
  * Date: 2/14/18
  * Time: 10:17 AM
  */
+require_once("model/Manager.php");
 
 class PostManager extends Manager
 {

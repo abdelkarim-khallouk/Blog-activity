@@ -4,9 +4,8 @@
  * Date: 2/12/18
  * Time: 11:06 AM
  */
-
-
-require(__DIR__ .'/../model/frontend.php');
+require_once(__DIR__ ."/../model/PostManager.php");
+require_once(__DIR__ ."/../model/CommentManager.php");
 
 function listPosts()
 {
@@ -21,7 +20,7 @@ function post()
     $postManager = new PostManager();
     $post = $postManager->getPost($_GET['id']);
 
-    $commentManager = new CommentManger();
+    $commentManager = new CommentManager();
     $comments = $commentManager->getComments($_GET['id']);
 
     require(__DIR__ .'/../view/frontend/postView.php');
@@ -29,7 +28,7 @@ function post()
 
 function addComment($postId, $author, $comment)
 {
-    $commentManager = new CommentManger();
+    $commentManager = new CommentManager();
     $affectedLines = $commentManager->postComment($postId, $author, $comment);
 
     if ($affectedLines === false) {
