@@ -37,6 +37,5 @@ try {
 catch (Exception $ex) {
     $errorMessage = $e->getMessage();
     require('view/errorView.php');
-    //die('Error: '. $ex->getMessage());
 }
 
