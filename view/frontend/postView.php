@@ -21,7 +21,7 @@
             </p>
         </div>
 
-        <h2 class="news">Commentaires</h2>
+        <h2 class="news">Commentaires</h2><br />
 
         <?php
         while ($comment = $comments->fetch())
@@ -29,8 +29,27 @@
             ?>
             <p class="news"><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
             <p class="news"><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+            <br />
             <?php
         }
         ?>
+        <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
+            <div  class="news">
+                <h4>Ajouter un commentaires:</h4>
+                <div>
+                    <label for="author"></label><br />
+                    <input type="text" id="author" name="author" placeholder="Auteur"/>
+                </div>
+                <div>
+                    <label for="comment"></label><br />
+                    <textarea id="comment" name="comment" placeholder="Commentaire"></textarea>
+                </div>
+                <div>
+                    <input type="submit" value="Publier"/>
+                </div>
+
+            </div>
+
+        </form>
     </body>
 </html>
