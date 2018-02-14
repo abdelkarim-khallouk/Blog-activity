@@ -48,13 +48,6 @@ function postComment($postId, $author, $comment)
 
 function dbConnect()
 {
-    try
-    {
-        $db = new PDO('mysql:host=localhost;dbname=ocr_db;charset=utf8', 'root', '123456');
-        return $db;
-    }
-    catch(Exception $e)
-    {
-        die('Connection error : '.$e->getMessage());
-    }
+    $db = new PDO('mysql:host=localhost;dbname=ocr_db;charset=utf8', 'root', '123456');
+    return $db;
 }
