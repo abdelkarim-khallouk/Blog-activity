@@ -37,11 +37,13 @@ function getComments($postId)
     return $comments;
 }
 
-function insertComment($author, $comment, $post_id)
+function postComment($postId, $author, $comment)
 {
     $db = dbConnect();
-    $req = $db->prepare('INSERT INTO comments (author, comment, post_id, comment_date) VALUES (?, ?, ?, CURRENT_TIMESTAMP())');
-    $req->execute(array($author, $comment, $post_id));
+    $comments = $db->prepare('INSERT INTO comments(post_id, author, comment, comment_date) VALUES(?, ?, ?, CURRENT_TIMESTAMP())');
+    $affectedLines = $comments->execute(array($postId, $author, $comment));
+
+    return $affectedLines;
 }
 
 function dbConnect()
