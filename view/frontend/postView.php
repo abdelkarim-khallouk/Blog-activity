@@ -33,17 +33,22 @@
         }
         ?>
         <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
-            <div>
-                <label for="author">Auteur</label><br />
-                <input type="text" id="author" name="author" />
+            <div  class="news">
+
+                <div>
+                    <label for="author"></label><br />
+                    <input type="text" id="author" name="author" placeholder="Auteur"/>
+                </div>
+                <div>
+                    <label for="comment"></label><br />
+                    <textarea id="comment" name="comment" placeholder="Commentaire"></textarea>
+                </div>
+                <div>
+                    <input type="submit" value="Publier"/>
+                </div>
+
             </div>
-            <div>
-                <label for="comment">Commentaire</label><br />
-                <textarea id="comment" name="comment"></textarea>
-            </div>
-            <div>
-                <input type="submit" />
-            </div>
+
         </form>
     </body>
 </html>
