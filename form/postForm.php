@@ -12,21 +12,24 @@
 
 <body>
 
-<form action="./../index.php?action=modifyComment&amp;id=<?= $_GET['id'] ?>&amp;post_id=<?= $_GET['post_id'] ?>" method="post">
-    <div  class="news">
-        <h4><i class="fa fa-edit"></i> Modifier le commentaire</h4>
-        <div class="form-group">
-            <label for="author"></label><br />
-            <input type="text" id="author" name="author" placeholder="Auteur" value="<?= $_GET['author'] ?>" disabled/>
+    <p class=""><a href='./../'><i class="fa fa-arrow-left "></i> Retour à la liste des billets</a></p>
+    <h4 class="news"><i class="fa fa-edit"></i> Modifier le commentaire</h4><br>
+
+    <form action="./../index.php?action=modifyComment&amp;id=<?= $_GET['id'] ?>&amp;post_id=<?= $_GET['post_id'] ?>" method="post">
+        <div  class="news">
+
+            <div class="form-group">
+                <label for="author">Auteur</label><br />
+                <input type="text" id="author" name="author" placeholder="Auteur" value="<?= $_GET['author'] ?>" disabled/>
+            </div>
+            <div class="form-group">
+                <label for="comment">Commentaire</label><br />
+                <textarea id="comment" name="comment" placeholder="Commentaire" rows="4"><?= $_GET['comment'] ?></textarea>
+            </div>
+            <div>
+                <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-paper-plane"></i> Envoyer</button>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="comment"></label><br />
-            <textarea id="comment" name="comment" placeholder="Commentaire" rows="4"><?= $_GET['comment'] ?></textarea>
-        </div>
-        <div>
-            <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-paper-plane"></i> Envoyer</button>
-        </div>
-    </div>
-</form>
+    </form>
 
 </body>
