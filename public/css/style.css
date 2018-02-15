@@ -2,10 +2,13 @@ h1, h3
 {
     text-align:center;
 }
+h1 {
+    font-family: Lobster;
+}
 h3
 {
-    background-color:black;
-    color:white;
+    background-color:#333333;
+    color: white;
     font-size:0.9em;
     margin-bottom:0px;
 }
