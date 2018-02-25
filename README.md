@@ -1,4 +1,4 @@
-# My PHP blog
+# PHP blog activity
 
 - OOP
 - MVC
